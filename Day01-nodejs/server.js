@@ -7,3 +7,5 @@ const server = http.createServer((req, res) => {
 server.listen(3100, () => {
   console.log("http://localhost:3100");
 });
+
+localStorage.setItem("key",JSON.stringify("keyval"))
