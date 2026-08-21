@@ -15,6 +15,16 @@ app.post("/create", (req, res) => {
 app.get("/", (req, res) => {
   res.send(students, "server runnig successfuly");
 });
+//Upate
+app.put("/update/:id", (req, res) => {
+  const { id } = req.params;
+  let student = students.find((student) => student.id === id);
+
+  student.name = req.body.name;
+  student.age = req.body.age;
+
+  res.send(student);
+});
 
 //delete
 app.delete("/delete/:id", (req, res) => {
