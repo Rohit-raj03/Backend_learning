@@ -1,0 +1,16 @@
+const { default: mongoose } = require("mongoose");
+
+const notesSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  discripcation: {
+    type: String,
+    required: true,
+    minlength: [20, "minimum 20 characters required"],
+  },
+});
+
+const notesModel = mongoose.model("note", notesSchema);
+module.exports = notesModel;
