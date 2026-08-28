@@ -1,5 +1,5 @@
 const app = require("./src/app");
-dns.setServers(["8.8.8.8", "8.8.4.4"]);
+// dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 const port = 3000;
 
