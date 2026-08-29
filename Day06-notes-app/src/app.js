@@ -1,12 +1,13 @@
 const express = require("express");
 const { default: mongoose } = require("mongoose");
 const notesModel = require("./models/note.model");
+const notesCreaateController = require("./controllers/notes.controller");
 const app = express();
 app.use(express.json());
 
-//create
-app.post("/create", notesCreaateController);
+const notesRoutes = require("./routes/notes.routes");
 
+app.use("/notes", notesRoutes);
 app.get("/", (req, res) => {
   res.send("this server runnig successfully");
 });
