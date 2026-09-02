@@ -6,8 +6,11 @@ const app = express();
 app.use(express.json());
 
 const notesRoutes = require("./routes/notes.routes");
+const connectDB = require("./config/db");
+connectDB();
 
 app.use("/notes", notesRoutes);
+
 app.get("/", (req, res) => {
   res.send("this server runnig successfully");
 });
