@@ -14,6 +14,7 @@ const createNoteController = async (req, res) => {
   } catch (error) {}
 };
 
+//read note
 const getAllNotes = async (req, res) => {
   try {
     const allNotes = await notesModel.find();
@@ -29,4 +30,19 @@ const getAllNotes = async (req, res) => {
   }
 };
 
-module.exports = { getAllNotes };
+//update
+const updatenote = async (req, res) => {
+  const id = req.params.id;
+  const note = req.body;
+  try {
+    const updatedNote = await notesModel.findByIdAndUpdate(id, note);
+    req.status(200).json({
+      message: "Updated note successfully",
+      note: updatedNote,
+    });
+  } catch (error) {
+    console.log("error form updata note ");
+  }
+};
+
+module.exports = { getAllNotes, createNoteController, updatenote };

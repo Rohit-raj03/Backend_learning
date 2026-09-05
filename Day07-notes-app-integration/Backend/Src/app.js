@@ -13,7 +13,7 @@ app.use(express.json());
 app.use("/notes", notesRouter);
 
 app.get("/", (req, res) => {
-  res.send("this is server ");
+  res.send("this server runnig successfully ");
 });
 
 
